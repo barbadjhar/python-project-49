@@ -12,3 +12,9 @@ package-install:	# установка как пакета из PyPi
 
 lint:				# запуск lint (проверка на синтаксис) 
 	uv run ruff check brain_games
+
+brain-even: 		# Запуск игры "На четность"
+	uv run brain-even
+
+brain-calc: 		# Запуск игры "Калькуляторuv "
+	uv run brain-calc

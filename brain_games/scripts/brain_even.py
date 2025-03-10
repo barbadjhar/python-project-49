@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from random import randint
 import prompt
 from brain_games.cli import welcome_user
+from random import randint 
 
 
 def check_parity(number):
@@ -12,7 +12,6 @@ def check_parity(number):
 def invitation_to_comparison(user):
     
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    print(f"{user}")
 
     for _ in range(3):
         number = randint(0, 99)
