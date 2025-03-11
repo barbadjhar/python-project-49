@@ -16,5 +16,8 @@ lint:				# запуск lint (проверка на синтаксис)
 brain-even: 		# Запуск игры "На четность"
 	uv run brain-even
 
-brain-calc: 		# Запуск игры "Калькуляторuv "
+brain-calc: 		# Запуск игры "Калькулятор"
 	uv run brain-calc
+
+brain-gcd: 		# Запуск игры "НОД "
+	uv run brain-gcd
