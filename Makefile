@@ -21,3 +21,6 @@ brain-calc: 		# Запуск игры "Калькулятор"
 
 brain-gcd: 		# Запуск игры "НОД "
 	uv run brain-gcd
+
+brain-progression:	# Запуск игры "Арифметическая прогрессия"
+	uv run brain-progression

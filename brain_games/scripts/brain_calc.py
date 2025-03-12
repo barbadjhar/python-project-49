@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+from operator import add, mul, sub
+from random import choice, randint
+
 import prompt
+
 from brain_games.cli import welcome_user
-from random import randint, choice
-from operator import add, sub, mul
 
 
 def generating_value(min=1, max=100):

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+from random import randint
+
 import prompt
+
 from brain_games.cli import welcome_user
-from random import randint 
 
 
 def check_parity(number):

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
-import prompt
-from brain_games.cli import welcome_user
-from random import randint, choice
 from math import gcd
+from random import randint
+
+import prompt
+
+from brain_games.cli import welcome_user
 
 
 def generating_value(min=1, max=100):
@@ -14,6 +16,7 @@ def generating_value(min=1, max=100):
 
 def calculate_exact(a, b):
     return gcd(a, b)
+
 
 def calculate_value(user):    
     print('Find the greatest common divisor of given numbers.')
