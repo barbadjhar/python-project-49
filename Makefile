@@ -24,3 +24,6 @@ brain-gcd: 		# Запуск игры "НОД "
 
 brain-progression:	# Запуск игры "Арифметическая прогрессия"
 	uv run brain-progression
+
+brain-prime:	# Запуск игры "Простое ли число?"
+	uv run brain-prime
