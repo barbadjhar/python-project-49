@@ -11,11 +11,9 @@ DESCRITION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def check_simple_number(num):
-    if num <= 1:
-        return "no"
     if num == 2:
         return "yes"
-    if num % 2 == 0:
+    if num <= 1 or num % 2 == 0:
         return "no"
     for i in range(3, int(sqrt(num)), 2):
         if num % i == 0:
@@ -37,7 +35,7 @@ def calculate_value(user):
         if user_answer == str(correct_answer):
             print("Correct!")
         else: 
-            print(f"'{user_answer}' is wrong answer ;(." +
+            print(f"'{user_answer}' is wrong answer ;(. " +
                   f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {user}!")
             return
