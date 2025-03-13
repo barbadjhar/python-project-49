@@ -25,12 +25,14 @@ def calculate_value(user):
         length = randint(LENGHT_MIN, LENGHT_MAX)      # длина прогресии
         start = randint(1, 100)                         # число для старта
         step = randint(1, 20)                           # шаг прогресии
-        shadow = randint(0, length)                        # выбор блок за точками
         
         correct_progress = generation_progression(start, step, length)  # список арифмитической прогресси 
 
+        shadow = randint(0, len(correct_progress) - 1)                        # выбор блок за точками
+
         shadow_progress = [*correct_progress]               # создаем новый список из элиментов correct_progress
         shadow_progress[shadow] = '..'                      # заменям выборочно index на двоеточие
+        shadow_progress = ' '.join(map(str, shadow_progress))
         correct_answer = correct_progress[shadow]           # значение скрытого index 
 
         print(f"Question: {shadow_progress}")
