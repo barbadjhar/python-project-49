@@ -7,6 +7,8 @@ import prompt
 
 from brain_games.cli import welcome_user
 
+DESCRITION = 'Find the greatest common divisor of given numbers.'
+
 
 def generating_value(min=1, max=100):
     operand_1 = randint(min, max)
@@ -19,7 +21,7 @@ def calculate_exact(a, b):
 
 
 def calculate_value(user):    
-    print('Find the greatest common divisor of given numbers.')
+    print(f'{DESCRITION}')
 
     for _ in range(3):
         operand_1, operand_2 = generating_value()
@@ -32,7 +34,8 @@ def calculate_value(user):
         if user_answer == str(correct_answer):
             print("Correct!")
         else: 
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            print(f"'{user_answer}' is wrong answer ;(. " +
+                  f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {user}!")
             return
     

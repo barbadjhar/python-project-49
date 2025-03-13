@@ -7,6 +7,8 @@ import prompt
 
 from brain_games.cli import welcome_user
 
+DESCRITION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
 
 def check_simple_number(num):
     if num <= 1:
@@ -22,7 +24,7 @@ def check_simple_number(num):
 
 
 def calculate_value(user):    
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')                     
+    print(f'{DESCRITION}')                     
 
     for _ in range(3):
 
@@ -35,7 +37,8 @@ def calculate_value(user):
         if user_answer == str(correct_answer):
             print("Correct!")
         else: 
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            print(f"'{user_answer}' is wrong answer ;(." +
+                  f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {user}!")
             return
     

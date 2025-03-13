@@ -6,6 +6,7 @@ import prompt
 
 from brain_games.cli import welcome_user
 
+DESCRIPTION = 'What number is missing in the progression?'
 LENGHT_MAX = 10             # длина прогресси большая 
 LENGHT_MIN = 5             # длина прогресси малая 
 
@@ -18,22 +19,22 @@ def generation_progression(start, step, length=10):
     
 
 def calculate_value(user):    
-    print('What number is missing in the progression?')                     
+    print(f'{DESCRIPTION}')                     
 
     for _ in range(3):
 
-        length = randint(LENGHT_MIN, LENGHT_MAX)      # длина прогресии
-        start = randint(1, 100)                         # число для старта
-        step = randint(1, 20)                           # шаг прогресии
+        length = randint(LENGHT_MIN, LENGHT_MAX)      
+        start = randint(1, 100)                         
+        step = randint(1, 20)                    
         
-        correct_progress = generation_progression(start, step, length)  # список арифмитической прогресси 
+        correct_progress = generation_progression(start, step, length)  
 
-        shadow = randint(0, len(correct_progress) - 1)                        # выбор блок за точками
+        shadow = randint(0, len(correct_progress) - 1)                        
 
-        shadow_progress = [*correct_progress]               # создаем новый список из элиментов correct_progress
-        shadow_progress[shadow] = '..'                      # заменям выборочно index на двоеточие
+        shadow_progress = [*correct_progress]               
+        shadow_progress[shadow] = '..'                     
         shadow_progress = ' '.join(map(str, shadow_progress))
-        correct_answer = correct_progress[shadow]           # значение скрытого index 
+        correct_answer = correct_progress[shadow]           
 
         print(f"Question: {shadow_progress}")
         user_answer = prompt.string('Your answer: ')
@@ -41,7 +42,8 @@ def calculate_value(user):
         if user_answer == str(correct_answer):
             print("Correct!")
         else: 
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            print(f"'{user_answer}' is wrong answer ;(." +
+                  f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {user}!")
             return
     
