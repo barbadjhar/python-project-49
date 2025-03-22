@@ -1,36 +1,35 @@
-#!/usr/bin/env python3
 
-from operator import add, mul, sub
 from random import choice, randint
 
 DESCRIPTION = 'What is the result of the expression?'
 
 
-def generating_value(min=1, max=100):
+def generate_value(min=1, max=100):
     operand_1 = randint(min, max)
     operand_2 = randint(min, max)
     return operand_1, operand_2
 
 
-def generating_symbol():
-    operation, operator = choice([
-        (add, '+'),
-        (sub, '-'),
-        (mul, '*'),
-    ])
-    return operation, operator
+def generate_symbol():
+    return choice(['+', '-', '*'])
 
 
 def calculate_exact(a, b, operator):
-    return operator(a, b)
+    if operator == '+':
+        return a + b
+    elif operator == '-':
+        return a - b 
+    elif operator == '*':
+        return a * b
+    return None
 
 
-def assembling_game():
-    operand_1, operand_2 = generating_value()
-    operation, operator = generating_symbol()
-    question = f'{operand_1} {operator} {operand_2}'
+def get_question_and_answer():
+    a, b = generate_value()
+    operator = generate_symbol()
+    question = f'{a} {operator} {b}'
 
-    correct_answer = calculate_exact(operand_1, operand_2, operation)
+    correct_answer = str(calculate_exact(a, b, operator))
 
     return question, correct_answer
 

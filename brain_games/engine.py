@@ -2,22 +2,24 @@
 
 import prompt
 
+from brain_games.cli import welcome_user
 
-def round(run_game):
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    print(f"Hello, {name}!")      
-    
-    print(f'{run_game.DESCRIPTION}')
+ROUNDS = 3
 
-    for _ in range(3):
-        question, correct_answer = run_game.assembling_game()
+
+def run_game(games):
+    name = welcome_user()
+
+    print(f'{games.DESCRIPTION}')
+
+    for _ in range(ROUNDS):
+        question, correct_answer = games.get_question_and_answer()
 
         print(f'Question: {question}')
 
         user_answer = prompt.string('Your answer: ')
 
-        if user_answer == str(correct_answer):
+        if user_answer == correct_answer:
             print('Correct!')
         else:
             print(f"'{user_answer}' is wrong answer ;(. " +

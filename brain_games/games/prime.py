@@ -1,9 +1,11 @@
-#!/usr/bin/env python3
 
 from math import sqrt
 from random import randint
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+ROUND_START = 1
+ROUND_END = 100
 
 
 def check_simple_number(num):
@@ -17,10 +19,10 @@ def check_simple_number(num):
     return "yes"
 
 
-def assembling_game():
-    number = randint(1, 100)
+def get_question_and_answer():
+    number = randint(ROUND_START, ROUND_END)
     question = f'{number}'
 
-    correct_answer = check_simple_number(number)
+    correct_answer = str(check_simple_number(number))
 
     return question, correct_answer
